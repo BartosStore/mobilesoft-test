@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 import 'package:mobilesoft/model/employee.dart';
-import 'package:mobilesoft/common/generator.dart';
+import 'package:mobilesoft/redux/app_state.dart';
 
 class ListPage extends StatefulWidget {
   ListPage({Key key, this.title}) : super(key: key);
@@ -13,17 +14,19 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  final List<Employee> employees = generateListOfNEmployees(10);
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView.builder(
-        itemCount: employees.length,
-        itemBuilder: (context, index) => renderEmployeeTile(employees[index]),
+    // todo: render CircularProgressIndicator
+    return StoreConnector<AppState, List<Employee>>(
+      converter: (store) => store.state.employees,
+      builder: (context, employees) => Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: ListView.builder(
+          itemCount: employees.length,
+          itemBuilder: (context, index) => renderEmployeeTile(employees[index]),
+        ),
       ),
     );
   }
