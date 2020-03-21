@@ -21,15 +21,21 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.separated(
-        separatorBuilder: (ctx, _) => Divider(color: Colors.black38),
+      body: ListView.builder(
         itemCount: employees.length,
-        itemBuilder: (context, index) => ListTile(
-          title: Text('${employees[index].name}'),
-          subtitle: Text('${employees[index].department}'),
-          leading: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/person_placeholder.png')),
-        ),
+        itemBuilder: (context, index) => renderEmployeeTile(employees[index]),
+      ),
+    );
+  }
+
+  Card renderEmployeeTile(Employee employee) {
+    return Card(
+      child: ListTile(
+        title: Text('${employee.name}'),
+        subtitle: Text('${employee.department}'),
+        leading: CircleAvatar(
+            backgroundImage:
+                AssetImage('assets/images/person_placeholder.png')),
       ),
     );
   }
