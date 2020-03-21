@@ -25,13 +25,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<String> employees =
+      List.generate(10, (index) => 'Employee $index');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(),
+      body: ListView.builder(
+        itemCount: employees.length,
+        itemBuilder: (context, index) => Text('${employees[index]}'),
+      ),
     );
   }
 }
