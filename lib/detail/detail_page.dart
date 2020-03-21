@@ -13,7 +13,7 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${employee.name}'),
+        title: Center(child: Text('${employee.name}')),
       ),
       body: Container(
         alignment: Alignment.center,

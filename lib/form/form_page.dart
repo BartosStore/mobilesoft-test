@@ -17,7 +17,7 @@ class _FormPageState extends State<FormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New employee'),
+        title: Center(child: Text('New employee')),
       ),
       body: Builder(
         builder: (BuildContext ctx) => Container(

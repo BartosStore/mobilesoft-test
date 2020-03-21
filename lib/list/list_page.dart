@@ -24,7 +24,7 @@ class _ListPageState extends State<ListPage> {
       converter: (store) => store.state.employees,
       builder: (context, employees) => Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Center(child: Text(widget.title)),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.add),
@@ -57,6 +57,7 @@ class _ListPageState extends State<ListPage> {
           context,
           MaterialPageRoute(builder: (ctx) => DetailPage(employee: employee)),
         ),
+        trailing: Icon(Icons.chevron_right),
       ),
     );
   }
