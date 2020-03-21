@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:mobilesoft/detail/detail_page.dart';
 
 import 'package:mobilesoft/model/employee.dart';
 import 'package:mobilesoft/redux/action.dart';
@@ -39,8 +40,12 @@ class _ListPageState extends State<ListPage> {
         title: Text('${employee.name}'),
         subtitle: Text('${employee.department}'),
         leading: CircleAvatar(
-            backgroundImage:
-                AssetImage('assets/images/person_placeholder.png')),
+          backgroundImage: AssetImage('assets/images/person_placeholder.png'),
+        ),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (ctx) => DetailPage(employee: employee)),
+        ),
       ),
     );
   }
