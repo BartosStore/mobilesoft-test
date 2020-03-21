@@ -9,6 +9,8 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final valueTextStyle = TextStyle(fontWeight: FontWeight.bold);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('${employee.name}'),
@@ -19,14 +21,28 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             CircleAvatar(
-              radius: 64.0,
+              radius: 110,
               backgroundImage:
                   AssetImage('assets/images/person_placeholder.png'),
             ),
             SizedBox(height: 16.0),
-            Text('Department: ' + employee.department),
-            Text('Salary: ' + employee.salary.toString() + ' Kč'),
-            Text('Address: ' + employee.address),
+            Expanded(
+              child: GridView.count(
+                padding: EdgeInsets.all(16.0),
+                crossAxisCount: 2,
+                crossAxisSpacing: 0,
+                childAspectRatio: 3,
+                children: <Widget>[
+                  Text('Department'),
+                  Text(employee.department, style: valueTextStyle),
+                  Text('Salary'),
+                  Text(employee.salary.toString() + ' Kč',
+                      style: valueTextStyle),
+                  Text('Address'),
+                  Text(employee.address, style: valueTextStyle),
+                ],
+              ),
+            ),
           ],
         ),
       ),
