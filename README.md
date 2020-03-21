@@ -2,8 +2,18 @@
 
 Presentation of tech abilities in mobile application development.
 
-## List
+## Analysis [10m]
 
-## Detail
+### List [2h]
 
-## Form
+- new project
+- ListView with string values
+- entity Employee
+- ListView with Employee name
+- style record as ListTile
+- redux state management for list of employees
+- redux thunk for fetching list via api
+
+### Detail
+
+### Form
