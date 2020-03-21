@@ -18,7 +18,6 @@ class ListPage extends StatefulWidget {
 class _ListPageState extends State<ListPage> {
   @override
   Widget build(BuildContext context) {
-    // todo: render CircularProgressIndicator
     return StoreConnector<AppState, List<Employee>>(
       onInit: (store) => store.dispatch(fetchEmployees()),
       converter: (store) => store.state.employees,
@@ -26,10 +25,13 @@ class _ListPageState extends State<ListPage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: ListView.builder(
-          itemCount: employees.length,
-          itemBuilder: (context, index) => renderEmployeeTile(employees[index]),
-        ),
+        body: employees.length == 0
+            ? Center(child: CircularProgressIndicator())
+            : ListView.builder(
+                itemCount: employees.length,
+                itemBuilder: (context, index) =>
+                    renderEmployeeTile(employees[index]),
+              ),
       ),
     );
   }
