@@ -51,6 +51,7 @@ class _ListPageState extends State<ListPage> {
         subtitle: Text('${employee.department}'),
         leading: CircleAvatar(
           backgroundImage: AssetImage('assets/images/person_placeholder.png'),
+          backgroundColor: Colors.transparent,
         ),
         onTap: () => Navigator.push(
           context,
