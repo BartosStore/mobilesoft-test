@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 import 'package:mobilesoft/model/employee.dart';
+import 'package:mobilesoft/redux/action.dart';
 import 'package:mobilesoft/redux/app_state.dart';
 
 class ListPage extends StatefulWidget {
@@ -18,6 +19,7 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     // todo: render CircularProgressIndicator
     return StoreConnector<AppState, List<Employee>>(
+      onInit: (store) => store.dispatch(fetchEmployees()),
       converter: (store) => store.state.employees,
       builder: (context, employees) => Scaffold(
         appBar: AppBar(

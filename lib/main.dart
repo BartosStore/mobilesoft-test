@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_thunk/redux_thunk.dart';
 
 import 'package:mobilesoft/list/list_page.dart';
 import 'package:mobilesoft/redux/app_state.dart';
@@ -10,6 +11,7 @@ void main() {
   final store = Store<AppState>(
     reducer,
     initialState: AppState.init(),
+    middleware: [thunkMiddleware],
   );
 
   runApp(
