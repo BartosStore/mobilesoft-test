@@ -21,4 +21,15 @@ Presentation of tech abilities in mobile application development.
 - photo
 - style page
 
-### Form
+### Form [30m]
+
+- new statefull widget page
+- simple textfields
+- style page
+- validation
+
+### Sum [3h]
+
+- 3 styled pages
+- redux state management
+- mocked api call
