@@ -31,6 +31,7 @@ class EmployeesApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Mobilesoft Employees',
         theme: ThemeData(
           primarySwatch: Colors.blue,

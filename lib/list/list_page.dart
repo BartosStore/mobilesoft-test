@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mobilesoft/detail/detail_page.dart';
+import 'package:mobilesoft/form/form_page.dart';
 
 import 'package:mobilesoft/model/employee.dart';
 import 'package:mobilesoft/redux/action.dart';
@@ -24,6 +25,13 @@ class _ListPageState extends State<ListPage> {
       builder: (context, employees) => Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (ctx) => FormPage())),
+            )
+          ],
         ),
         body: employees.length == 0
             ? Center(child: CircularProgressIndicator())
