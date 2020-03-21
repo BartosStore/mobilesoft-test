@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mobilesoft/model/employee.dart';
+import 'package:mobilesoft/common/generator.dart';
 
 class ListPage extends StatefulWidget {
   ListPage({Key key, this.title}) : super(key: key);
@@ -13,7 +14,7 @@ class ListPage extends StatefulWidget {
 
 class _ListPageState extends State<ListPage> {
   final List<Employee> employees =
-      List.generate(10, (index) => Employee(name: 'Josef Novak $index'));
+      generateListOfNEmployees(10);
 
   @override
   Widget build(BuildContext context) {
