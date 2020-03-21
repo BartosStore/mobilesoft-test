@@ -27,7 +27,8 @@ class _ListPageState extends State<ListPage> {
         itemBuilder: (context, index) => ListTile(
           title: Text('${employees[index].name}'),
           subtitle: Text('${employees[index].department}'),
-          leading: Icon(Icons.person),
+          leading: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/person_placeholder.png')),
         ),
       ),
     );
