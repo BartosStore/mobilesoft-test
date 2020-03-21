@@ -2,7 +2,7 @@
 
 Presentation of tech abilities in mobile application development.
 
-## Analysis [10m]
+## Analysis [15m]
 
 ### List [2h]
 
@@ -14,6 +14,11 @@ Presentation of tech abilities in mobile application development.
 - redux state management for list of employees
 - redux thunk for fetching list via api
 
-### Detail
+### Detail [15m]
+
+- new staless widget page
+- simple list of employee values
+- photo
+- style page
 
 ### Form
