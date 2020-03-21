@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobilesoft/model/employee.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,8 +26,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<String> employees =
-      List.generate(10, (index) => 'Employee $index');
+  final List<Employee> employees =
+      List.generate(10, (index) => Employee(name: 'Josef Novak $index'));
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView.builder(
         itemCount: employees.length,
-        itemBuilder: (context, index) => Text('${employees[index]}'),
+        itemBuilder: (context, index) => Text('${employees[index].name}'),
       ),
     );
   }
