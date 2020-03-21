@@ -13,8 +13,7 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  final List<Employee> employees =
-      generateListOfNEmployees(10);
+  final List<Employee> employees = generateListOfNEmployees(10);
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +21,14 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
+        separatorBuilder: (ctx, _) => Divider(color: Colors.black38),
         itemCount: employees.length,
-        itemBuilder: (context, index) => Text('${employees[index].name}'),
+        itemBuilder: (context, index) => ListTile(
+          title: Text('${employees[index].name}'),
+          subtitle: Text('${employees[index].department}'),
+          leading: Icon(Icons.person),
+        ),
       ),
     );
   }
