@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobilesoft/api/database_client.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
@@ -7,7 +8,10 @@ import 'package:mobilesoft/list/list_page.dart';
 import 'package:mobilesoft/redux/app_state.dart';
 import 'package:mobilesoft/redux/reducer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DatabaseClient.init();
+  
   final store = Store<AppState>(
     reducer,
     initialState: AppState.init(),
