@@ -28,8 +28,15 @@ Presentation of tech abilities in mobile application development.
 - style page
 - validation
 
-### Sum [3h]
+### DB, fix [2h]
+
+- fix some bugs
+- learn DB/try examples/implement DB client
+
+### Sum [5h]
 
 - 3 styled pages
 - redux state management
 - mocked api call
+- bug fix
+- database
